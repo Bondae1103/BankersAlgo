@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banker's Algorithm — Final Offline Simulation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Banker's Algorithm — Interactive Offline Simulator</h1>
+    <p class="subtitle">Visualize deadlock avoidance and safe sequence detection — works offline.</p>
+  </header>
+
+  <main>
+    <section id="controls" class="panel">
+      <h2>Simulation Controls</h2>
+      <div class="grid">
+        <label>Processes: <input id="numProc" type="number" min="1" max="10" value="5"></label>
+        <label>Resources: <input id="numRes" type="number" min="1" max="6" value="3"></label>
+        <button id="generateBtn">Generate Random</button>
+        <button id="loadExampleBtn">Load Preset Example</button>
+      </div>
+
+      <div class="matrix-area">
+        <div>
+          <h3>Available</h3>
+          <div id="availableInputs"></div>
+        </div>
+        <div id="processContainer">
+          <!-- Each process's box (Max + Allocation) will be generated here -->
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <button id="runBtn">▶ Run Simulation</button>
+        <button id="pauseBtn">⏸ Pause</button>
+        <button id="stepBackBtn">◀ Step</button>
+        <button id="stepFwdBtn">Step ▶</button>
+        <button id="resetAnimBtn">Reset</button>
+        <label>Speed <input id="speedRange" type="range" min="0.2" max="2.5" step="0.1" value="1"></label>
+        <button id="screenshotBtn">Screenshot</button>
+      </div>
+
+      <div class="timeline-wrap">
+        <input id="timeline" type="range" min="0" max="0" value="0" step="1">
+        <div id="timelineLabel">Step 0 / 0</div>
+      </div>
+
+      <div id="resultMessage"></div>
+    </section>
+
+    <section id="canvasPanel" class="panel">
+      <h2>Visualization</h2>
+      <canvas id="animCanvas" width="1000" height="520"></canvas>
+      <div id="statsPanel">
+        <h3>Status</h3>
+        <div id="stats"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Banker's Algorithm Offline Visualization • No Server Required • Works on any browser</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

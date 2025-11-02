@@ -1,0 +1,31 @@
+:root {
+  --bg:#0f1724;
+  --accent:#1e90ff;
+  --good:#22c55e;
+  --bad:#ef4444;
+  font-family: Inter, system-ui;
+  color-scheme: dark;
+}
+body {
+  background:linear-gradient(180deg,var(--bg),#051428);
+  color:#e6eef8; margin:0; padding:18px;
+}
+.panel{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(3,7,18,0.8)}
+main{display:flex;gap:18px;flex-wrap:wrap}
+#controls{width:380px;min-width:300px;max-height:820px;overflow:auto}
+#canvasPanel{flex:1;min-width:520px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.matrix-area{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+.matrix-input{display:flex;gap:4px;flex-wrap:wrap}
+.matrix-input input{width:42px;padding:5px;border-radius:5px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:inherit;text-align:center}
+.controls-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+button{background:var(--accent);border:none;border-radius:5px;padding:6px 10px;color:#001326;font-weight:600;cursor:pointer}
+.process-box{border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:8px;margin-bottom:6px;background:rgba(255,255,255,0.03)}
+.process-box h4{margin:0 0 6px 0;color:#93c5fd}
+.matrix-pair{display:flex;gap:6px}
+.matrix-pair>div{flex:1}
+canvas{width:100%;border-radius:8px;margin-top:8px;background:#04142a}
+#stats{font-family:monospace;font-size:0.9rem;white-space:pre-wrap;color:#a0aec0}
+#resultMessage{margin-top:10px;font-weight:bold;text-align:center;padding:6px;border-radius:6px}
+#resultMessage.safe{background:rgba(34,197,94,0.15);color:#4ade80}
+#resultMessage.deadlock{background:rgba(239,68,68,0.15);color:#f87171}
